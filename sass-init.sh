@@ -1,5 +1,8 @@
 #!/bin/bash
 # sass-init.sh: a shell script to generate a Sass architecture from a Manifest file
+# $1: manifest
+# $2: syntax (scss | sass) 
+# $3: prefix (prefix | no-prefix)
 for i in `grep -P '^\s*@import\s+([\x27\x22]).+\1' $1 | sed -r 's/.*([\x27\x22])(.+)\1.*/\2/'`;
 do
   DIR=`dirname $i`
